@@ -36,9 +36,14 @@ print("[+] Query string: " + b.get_query_string())
 
 print("\n================= FULL REQUEST ==============\n")
 print(b)
+response = b.send()
+# Print response for debug purposes
+print("[+] Response Status Code:", response.status_code)
+print("[+] Response Headers:", response.headers)
+print("[+] Response Body:", response.text)
 
 # Change method or body
 # First requests is a GET req, of course...
-b.change_method("POST")
-b.set_body({"Name": "Red", "Surname": "Smasher"})  # Automatically updates Content-Type to JSON
+# b.change_method("POST")
+# b.set_body({"Name": "Red", "Surname": "Smasher"})  # Automatically updates Content-Type to JSON
 # print(b)

@@ -23,7 +23,6 @@ When working with Burp Suite, you may often find yourself, create complex Macros
 ## On roadmap / pending
 
 - File upload support
-- Replay/send action
 - Proxy support
 
 ---
@@ -68,7 +67,7 @@ b.set_header("Authorization", "Bearer newtoken")  # Set specific header
 # Get URI
 # Outputs: /thepath/goes/here
 print("[+] URI: " + b.get_uri())
-b.set_uri("/newpath/here")
+# b.set_uri("/newpath/here")
 print("[+] URI: " + b.get_uri())
 
 
@@ -89,13 +88,17 @@ print("[+] Query string: " + b.get_query_string())
 
 print("\n================= FULL REQUEST ==============\n")
 print(b)
+response = b.send()
+# Print response for debug purposes
+print("[+] Response Status Code:", response.status_code)
+print("[+] Response Headers:", response.headers)
+print("[+] Response Body:", response.text)
 
 # Change method or body
 # First requests is a GET req, of course...
-b.change_method("POST")
-b.set_body({"Name": "Red", "Surname": "Smasher"})  # Automatically updates Content-Type to JSON
+# b.change_method("POST")
+# b.set_body({"Name": "Red", "Surname": "Smasher"})  # Automatically updates Content-Type to JSON
 # print(b)
-
 ```
 
 ### Running the Example

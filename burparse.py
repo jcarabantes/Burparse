@@ -1,5 +1,6 @@
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 import json
+import requests
 
 class Burparse:
     """
@@ -184,6 +185,19 @@ class Burparse:
         """
         query = self.get_query_string()
         return parse_qs(query)
+
+    def send(self):
+        """Sends the configured HTTP request."""
+        url = f"https://{self.headers['Host']}{self.path}"
+        method = self.method.lower()
+        headers = self.headers.copy()
+        body = self.body if self.body else None
+
+        # Remove headers not accepted by requests
+        headers.pop("Host", None)
+
+        return requests.request(method, url, headers=headers, data=body)
+
 
     def __str__(self):
         """
