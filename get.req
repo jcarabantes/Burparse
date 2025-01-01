@@ -1,0 +1,21 @@
+GET /home?clientSuppliersList=inactiveSuppliers&pageNo=1&pageSize=10 HTTP/1.1
+Host: localhost:8000
+Cookie: somecookie=here
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: */*
+Accept-Language: en-GB
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/json
+Cache-Control: no-cache
+Pragma: no-cache
+Expires: Sat, 01 Jan 2000 00:00:00 GMT
+Authorization: Bearer eyJhbGciOiJ...
+X-Requested-With: XMLHttpRequests
+Traceparent: 00-3143f1d54e4b9a3300e295ed67eaf02a
+Referer: localhost:8000/home
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Te: trailers
+Connection: keep-alive
+
