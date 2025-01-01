@@ -2,7 +2,7 @@
 
 Burparse is a lightweight HTTP request parser and manipulator designed for developers and testers who frequently use tools like Burp Suite Repeater. It simplifies the process of converting raw HTTP requests into Python scripts for further automation or testing.
 
-When working with Burp Suite, you may often find yourself, create complex Macros or manually copying raw HTTP requests into Python scripts for automation. Burparse addresses this need by offering a convenient way to parse, manipulate, and reconstruct HTTP requests programmatically.
+When working with Burp Suite, you may often find yourself, create complex Macros or manually creating raw HTTP requests into Python scripts for automation. Burparse addresses this need by offering a convenient way to parse, manipulate, and reconstruct HTTP requests programmatically.
 
 ---
 
@@ -17,6 +17,7 @@ When working with Burp Suite, you may often find yourself, create complex Macros
 - **Full Path Reconstruction**: Seamlessly update the URI or query string while keeping the rest of the path intact.
 - **HTTP Method Switching**: Change the HTTP method dynamically (e.g., from `POST` to `GET`).
 - **Readable Reconstruction**: Reconstruct and export the modified request as a raw HTTP request string.
+- **Resend**: Once you've changed everything you need, you can call send() to automatically make the new post/get request.
 
 ---
 
@@ -124,6 +125,7 @@ python example.py get.req
 | **Method Switching**         | Dynamically change the HTTP method (e.g., POST to GET).                    |
 | **Automatic Content-Type**   | Automatically adjusts the `Content-Type` header based on body type.        |
 | **Readable Reconstruction** | Exports the modified request back into raw HTTP format for easy use.       |
+| **Resend** | Sends the new request. |
 
 ---
 
